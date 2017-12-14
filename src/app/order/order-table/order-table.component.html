@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th>Titre</th>
+    <th>Auteur</th>
+    <th>Prix</th>
+    <!-- <th>Quantité</th> -->
+  </tr>  
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td>{{row.title}}</td>
+      <td>{{row.author}}</td>
+      <td>{{row.price}}</td>
+      <!-- <td>{{row.quantity}}</td> -->
+    </tr>
+  </tbody>
+</table>

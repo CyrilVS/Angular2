@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderRow } from '../order-row.model';
+import { Utils } from '../utils';
 
 @Component({
   selector: 'app-order-table',
@@ -14,6 +15,12 @@ export class OrderTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  totalTTC() {
+    return this.rows && this.rows
+      .map(row => row.TTC()) // Parcourt tous les rows est garde le prix TTC
+      .reduce(Utils.total, 0); // Part de 0, somme le prix TTC courrant
   }
 
 }

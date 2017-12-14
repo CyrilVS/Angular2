@@ -22,4 +22,10 @@
       <td><button (click)="removeBookRow.emit(row)">X</button></td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="5">Total</td>
+      <td colspan="2">{{totalTTC() | currency:'EUR'}}</td>
+    </tr>
+  </tfoot>
 </table>

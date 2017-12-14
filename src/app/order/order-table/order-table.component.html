@@ -4,15 +4,22 @@
     <th>Titre</th>
     <th>Auteur</th>
     <th>Prix</th>
-    <!-- <th>Quantité</th> -->
+    <th>Quantité</th>
+    <th>Prix HT</th>
+    <th>Prix TTC</th>
+    <th>Suppr.</th>
   </tr>  
   </thead>
   <tbody>
     <tr *ngFor="let row of rows">
       <td>{{row.title}}</td>
       <td>{{row.author}}</td>
-      <td>{{row.price}}</td>
+      <td>{{row.price | currency:'EUR'}}</td>
+      <td><input type="number" [(ngModel)]="row.quantity"/></td>
       <!-- <td>{{row.quantity}}</td> -->
+      <td class="right">{{row.HT() | currency:'EUR'}}</td>
+      <td class="right">{{row.TTC() | currency:'EUR'}}</td>
+      <td><button (click)="removeBookRow.emit(row)">X</button></td>
     </tr>
   </tbody>
 </table>

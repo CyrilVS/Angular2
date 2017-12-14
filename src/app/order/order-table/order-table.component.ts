@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderRow } from '../order-row.model';
 
 @Component({
@@ -9,6 +9,8 @@ import { OrderRow } from '../order-row.model';
 export class OrderTableComponent implements OnInit {
 
   @Input() rows: OrderRow[];
+
+  @Output() removeBookRow = new EventEmitter<OrderRow>();
   constructor() { }
 
   ngOnInit() {

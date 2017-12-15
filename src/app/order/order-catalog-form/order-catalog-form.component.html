@@ -1,0 +1,14 @@
+<h2>Ajouter un livre de la liste</h2>
+<form (ngSubmit)="emitAdd()" #formWS="ngForm">
+  <div>
+    <label>Livre</label>
+    <select name="livre" [(ngModel)]="catalogFormData.book" required>
+      <option *ngFor="let book of catalog" [ngValue]="book">{{book.title}}</option>
+    </select>
+  </div>
+  <div>
+    <label>Quantité</label>
+    <input type="number" name="quantity" [(ngModel)]="catalogFormData.quantity"/>
+  </div>
+  <input type="submit" value="Ajouter" [disabled]="formWS.invalid" />
+</form>

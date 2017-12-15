@@ -10,8 +10,8 @@ import { Utils } from '../utils';
 export class OrderTableComponent implements OnInit {
 
   @Input() rows: OrderRow[];
-
   @Output() removeBookRow = new EventEmitter<OrderRow>();
+
   constructor() { }
 
   ngOnInit() {

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { OrderModule } from './order/order.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { OrderModule } from './order/order.module';
   ],
   imports: [
     BrowserModule,
-    OrderModule
+    OrderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

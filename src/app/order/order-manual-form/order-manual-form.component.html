@@ -1,3 +1,20 @@
-<p>
-  order-manual-form works!
-</p>
+<h2>Ajouter un livre</h2>
+<form (ngSubmit)="emitAdd()" #formInfo="ngForm">
+  <div>
+    <label>Titre</label>
+    <input type="text" name="title" required [(ngModel)]="manualFormData.title"/>
+  </div>
+  <div>
+    <label>Author</label>
+    <input type="text" name="author" required [(ngModel)]="manualFormData.author"/>
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" name="price" required [(ngModel)]="manualFormData.price"/>
+  </div>
+  <div>
+    <label>Quantity</label>
+    <input type="number" name="quantity" required [(ngModel)]="manualFormData.quantity"/>
+  </div>
+  <input type="submit" value="Ajouter" [disabled]="formInfo.invalid" />
+</form>

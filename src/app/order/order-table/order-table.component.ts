@@ -19,7 +19,7 @@ export class OrderTableComponent implements OnInit {
 
   totalTTC() {
     return this.rows && this.rows
-      .map(row => row.TTC()) // Parcourt tous les rows est garde le prix TTC
+      .map(row => row.TTC()) // Parcourt ttous les rows est garde le prix TTC
       .reduce(Utils.total, 0); // Part de 0, somme le prix TTC courrant
   }
 

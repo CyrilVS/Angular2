@@ -3,7 +3,7 @@
 Ajout Auto / Manuel<input type="checkbox" [(ngModel)]="manualMode" />
 <br/>
 <app-order-manual-form *ngIf="manualMode" (addBookRow)="addRow($event)"></app-order-manual-form>
-<div *ngIf="books$ | async as books ; else noCatalog">
+<div *ngIf="books$ | async as books , else noCatalog">
     <app-order-catalog-form *ngIf="!manualMode" [catalog]="books" (addCatalog)="addRow($event)"></app-order-catalog-form>
 </div>
 <ng-template #noCatalog>
